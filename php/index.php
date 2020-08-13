@@ -38,7 +38,7 @@ class Explorer
     public function __construct()
     {
         $path = $_GET['path'] ?? null;
-        if ($path !== null && !preg_match('#^[A-Za-z0-9_-]*[/A-Za-z0-9_-]*$#', $path)) {
+        if ($path !== null && !preg_match('#^[A-Za-z0-9_-]*[/\\A-Za-z0-9_-]*$#', $path)) {
             throw new Exception("Передан некорректный параметр 'path'");
         }
         $this->root_dir = __DIR__;
